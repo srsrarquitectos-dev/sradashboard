@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Política de Privacidad SRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&family=Caladea:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: documento legal de una columna con índice lateral fijo en escritorio; tablas con desplazamiento propio */
+:root{
+  --bg:#FFFFFF; --fg:#1D2A2C; --muted:#5A6B6D; --line:#D9E2E2; --soft:#EFF5F4;
+  --teal:#12666B; --teal-ink:#0E5357; --terra:#B85633; --terra-soft:#F8E9E2; --mark:#FFF1C9; --mark-ink:#6B4A00;
+  --f-display:"Questrial","Century Gothic","Avenir Next",system-ui,sans-serif;
+  --f-body:"Caladea","Cambria",Georgia,serif;
+  --f-ui:"Questrial","Century Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111819;--fg:#E3ECEC;--muted:#9AB0B1;--line:#2A3A3C;--soft:#18292B;--teal:#5FB7BC;--teal-ink:#8FD0D3;--terra:#E58A64;--terra-soft:#3A2219;--mark:#3D3214;--mark-ink:#F3D58A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111819;--fg:#E3ECEC;--muted:#9AB0B1;--line:#2A3A3C;--soft:#18292B;--teal:#5FB7BC;--teal-ink:#8FD0D3;--terra:#E58A64;--terra-soft:#3A2219;--mark:#3D3214;--mark-ink:#F3D58A;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:17px/1.62 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.cenefa{height:10px;margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px))) 0;background:repeating-linear-gradient(90deg,var(--teal) 0 48px,var(--terra) 48px 60px,var(--teal) 60px 72px,transparent 72px 80px)}
+header.top{max-width:1120px;margin:0 auto;padding-block:32px 24px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.firm{font:600 13px/1 var(--f-ui);letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+h1{font:400 clamp(30px,4.6vw,46px)/1.12 var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font:14px/1.4 var(--f-ui);color:var(--muted)}
+.draft{max-width:1120px;margin:20px auto 0;border:1px solid var(--terra);background:var(--terra-soft);border-radius:6px;padding:12px 16px;font:15px/1.5 var(--f-ui)}
+.draft b{color:var(--terra)}
+.wrap{max-width:1120px;margin:28px auto 0;display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;align-items:start}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);font:14px/1.4 var(--f-ui);display:grid;gap:2px}
+nav.toc .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+nav.toc a{color:var(--fg);text-decoration:none;padding:5px 10px;border-left:2px solid var(--line);display:flex;gap:8px}
+nav.toc a span{color:var(--muted);font-variant-numeric:tabular-nums;min-width:20px}
+nav.toc a:hover,nav.toc a:focus-visible{border-left-color:var(--teal);color:var(--teal);outline:none}
+main{min-width:0;max-width:72ch}
+section{padding-block:6px 22px;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+section:last-of-type{border-bottom:0}
+h2{font:400 25px/1.25 var(--f-display);margin:22px 0 8px;color:var(--teal-ink);display:flex;gap:12px;align-items:baseline;text-wrap:balance}
+h2 .n{font:600 14px/1 var(--f-ui);color:var(--terra);font-variant-numeric:tabular-nums}
+h3{font:600 16px/1.3 var(--f-ui);margin:18px 0 4px;letter-spacing:.02em}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px;display:grid;gap:4px}
+.ph{background:var(--mark);color:var(--mark-ink);border-radius:3px;padding:0 5px;font:600 .88em/1.4 var(--f-ui);white-space:nowrap}
+.law{font:13px/1.4 var(--f-ui);color:var(--muted)}
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:620px;font:15px/1.45 var(--f-body)}
+th{font:600 12px/1.3 var(--f-ui);letter-spacing:.08em;text-transform:uppercase;text-align:left;background:var(--teal);color:var(--bg);padding:10px 12px}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:var(--soft)}
+td:first-child{font:600 15px/1.4 var(--f-ui)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
+.card{border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:4px;align-content:start}
+.card .big{font:400 30px/1 var(--f-display);color:var(--teal);font-variant-numeric:tabular-nums}
+.card .big small{font-size:15px;color:var(--muted)}
+.card b{font:600 15px/1.3 var(--f-ui)}
+.card p{margin:0;font-size:15px;color:var(--muted)}
+.contact{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 16px;margin:10px 0;font-size:16px}
+.contact dt{font:600 14px/1.6 var(--f-ui);color:var(--muted)}
+.contact dd{margin:0}
+.aviso{border:1px solid var(--teal);border-radius:6px;padding:16px;background:var(--soft);display:grid;gap:10px}
+.aviso p{margin:0;font-size:15px}
+.btn{justify-self:start;font:600 14px/1 var(--f-ui);border:1px solid var(--teal);background:var(--bg);color:var(--teal);border-radius:5px;padding:9px 14px;cursor:pointer}
+.btn:hover{background:var(--teal);color:var(--bg)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--terra);outline-offset:2px}
+a{color:var(--teal)}
+footer{max-width:1120px;margin:32px auto 0;padding-top:16px;border-top:1px solid var(--line);font:13px/1.5 var(--f-ui);color:var(--muted)}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);gap:8px}nav.toc{position:static;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--line);border-radius:6px;padding:12px}nav.toc .lbl{grid-column:1/-1}}
+@media (max-width:520px){.cards{grid-template-columns:minmax(0,1fr)}nav.toc{grid-template-columns:minmax(0,1fr)}.contact{grid-template-columns:minmax(0,1fr);gap:0}.contact dd{margin-bottom:8px}body{font-size:16px}}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<div class="cenefa" aria-hidden="true"></div>
+<header class="top">
+  <div class="firm">Santiago Rubiano Arquitectos</div>
+  <h1>Política de tratamiento de datos personales</h1>
+  <div class="meta"><span>Versión 1.1 · borrador</span><span>Aplica a SRA Project Management y a los demás canales de SRA</span><span>Ley Estatutaria 1581 de 2012 · Decreto 1074 de 2015</span></div>
+</header>
+
+<div class="draft" role="note"><b>Borrador para revisión jurídica.</b> Los campos resaltados en amarillo (<span class="ph">así</span>) deben completarse con los datos de la firma, y el texto debe revisarlo un abogado antes de publicarlo.</div>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Contenido">
+    <div class="lbl">Contenido</div>
+    <a href="#marco"><span>1</span>Marco normativo</a>
+    <a href="#responsable"><span>2</span>Responsable</a>
+    <a href="#definiciones"><span>3</span>Definiciones</a>
+    <a href="#principios"><span>4</span>Principios</a>
+    <a href="#datos"><span>5</span>Datos y finalidades</a>
+    <a href="#autorizacion"><span>6</span>Autorización</a>
+    <a href="#sensibles"><span>7</span>Sensibles y menores</a>
+    <a href="#tratamiento"><span>8</span>Encargados y transferencias</a>
+    <a href="#derechos"><span>9</span>Sus derechos</a>
+    <a href="#procedimiento"><span>10</span>Consultas y reclamos</a>
+    <a href="#deberes"><span>11</span>Deberes de SRA</a>
+    <a href="#seguridad"><span>12</span>Seguridad e incidentes</a>
+    <a href="#rnbd"><span>13</span>Registro de bases</a>
+    <a href="#cookies"><span>14</span>Cookies</a>
+    <a href="#vigencia"><span>15</span>Vigencia</a>
+    <a href="#aviso"><span>16</span>Aviso y autorización</a>
+  </nav>
+
+  <main>
+    <section id="marco">
+      <h2><span class="n">1</span>Marco normativo</h2>
+      <p>Esta política desarrolla el derecho de hábeas data y se rige por las siguientes normas colombianas:</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Norma</th><th>Qué regula</th></tr></thead>
+        <tbody>
+          <tr><td>Constitución Política, artículo 15</td><td>Derecho a la intimidad y a conocer, actualizar y rectificar la información recogida sobre las personas en bases de datos.</td></tr>
+          <tr><td>Ley Estatutaria 1581 de 2012</td><td>Régimen general de protección de datos personales: principios, autorización, derechos, deberes, procedimientos y transferencias.</td></tr>
+          <tr><td>Decreto 1074 de 2015, capítulo 25</td><td>Reglamento de la Ley 1581 (antes Decreto 1377 de 2013): contenido de la política y del aviso de privacidad, autorización, transmisiones y responsabilidad demostrada.</td></tr>
+          <tr><td>Decreto 1074 de 2015, capítulo 26</td><td>Registro Nacional de Bases de Datos (antes Decreto 886 de 2014).</td></tr>
+          <tr><td>Circular Única de la Superintendencia de Industria y Comercio</td><td>Instrucciones de la autoridad sobre seguridad, registro de bases de datos y reporte de incidentes.</td></tr>
+        </tbody>
+      </table></div>
+      <p>No aplica a los datos financieros y crediticios regulados por la Ley 1266 de 2008, que SRA no administra.</p>
+    </section>
+
+    <section id="responsable">
+      <h2><span class="n">2</span>Responsable del tratamiento</h2>
+      <p>Santiago Rubiano Arquitectos (en adelante, SRA) es responsable del tratamiento de los datos personales que recoge en sus proyectos, en su oficina y en la plataforma SRA Project Management.</p>
+      <dl class="contact">
+        <dt>Razón social</dt><dd><span class="ph">Por completar</span></dd>
+        <dt>NIT</dt><dd><span class="ph">Por completar</span></dd>
+        <dt>Domicilio</dt><dd><span class="ph">Dirección por completar</span>, <span class="ph">ciudad</span>, Colombia</dd>
+        <dt>Teléfono</dt><dd><span class="ph">Por completar</span></dd>
+        <dt>Correo</dt><dd><span class="ph">datospersonales@por-completar</span></dd>
+        <dt>Área responsable</dt><dd><span class="ph">Área o cargo por completar</span></dd>
+      </dl>
+    </section>
+
+    <section id="definiciones">
+      <h2><span class="n">3</span>Definiciones</h2>
+      <p>Se usan con el sentido que les da el artículo 3 de la Ley 1581 de 2012 y el Decreto 1074 de 2015:</p>
+      <ul>
+        <li><b>Titular:</b> la persona natural cuyos datos son objeto de tratamiento.</li>
+        <li><b>Dato personal:</b> cualquier información vinculada o que pueda asociarse a una persona natural determinada o determinable.</li>
+        <li><b>Tratamiento:</b> cualquier operación sobre datos personales, como recolección, almacenamiento, uso, circulación o supresión.</li>
+        <li><b>Responsable:</b> quien decide sobre la base de datos y el tratamiento; en este caso, SRA.</li>
+        <li><b>Encargado:</b> quien trata datos por cuenta del responsable, como un proveedor de servicios en la nube.</li>
+        <li><b>Autorización:</b> consentimiento previo, expreso e informado del titular.</li>
+        <li><b>Transmisión:</b> comunicación de datos a un encargado, dentro o fuera de Colombia, para que los trate por cuenta de SRA.</li>
+        <li><b>Transferencia:</b> envío de datos a otro responsable, dentro o fuera de Colombia.</li>
+      </ul>
+    </section>
+
+    <section id="principios">
+      <h2><span class="n">4</span>Principios</h2>
+      <p>SRA aplica los principios del artículo 4 de la Ley 1581 de 2012:</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Principio</th><th>Cómo lo aplica SRA</th></tr></thead>
+        <tbody>
+          <tr><td>Legalidad</td><td>Trata datos solo conforme a la ley y sus reglamentos.</td></tr>
+          <tr><td>Finalidad</td><td>Informa al titular para qué se usan sus datos y no los usa para otros fines.</td></tr>
+          <tr><td>Libertad</td><td>Pide autorización previa, expresa e informada, salvo excepción legal.</td></tr>
+          <tr><td>Veracidad o calidad</td><td>Mantiene los datos completos, exactos y actualizados.</td></tr>
+          <tr><td>Transparencia</td><td>Informa al titular, cuando lo pida, qué datos suyos tiene.</td></tr>
+          <tr><td>Acceso y circulación restringida</td><td>Solo acceden las personas autorizadas, según su rol, y no publica datos privados en internet sin control de acceso.</td></tr>
+          <tr><td>Seguridad</td><td>Aplica medidas técnicas, humanas y administrativas contra pérdida, alteración o acceso no autorizado.</td></tr>
+          <tr><td>Confidencialidad</td><td>Quienes tratan datos guardan reserva, incluso después de terminar su relación con SRA.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="datos">
+      <h2><span class="n">5</span>Datos que tratamos y para qué</h2>
+      <p>SRA solo recoge los datos necesarios para cada finalidad.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Titulares</th><th>Datos</th><th>Finalidades</th></tr></thead>
+        <tbody>
+          <tr><td>Equipo de SRA</td><td>Nombre, cargo, usuario, foto de perfil (opcional), horas registradas en tareas, entrada y salida de la jornada, horas extra, actividad en la plataforma.</td><td>Asignar y seguir tareas y proyectos; controlar la jornada y las horas extra; programar el trabajo semanal; evaluar cargas de trabajo; proteger el acceso a la información; cumplir obligaciones laborales.</td></tr>
+          <tr><td>Clientes</td><td>Nombre o razón social, datos de contacto, ubicación del predio, información del proyecto, observaciones a las entregas.</td><td>Ejecutar el contrato de diseño u obra; enviar entregas y recibir aprobaciones; registrar cambios de alcance; facturar y cumplir obligaciones contables y tributarias.</td></tr>
+          <tr><td>Contratistas y proveedores</td><td>Nombre, empresa, datos de contacto, reportes diarios de obra, fotografías de obra, incidencias y pendientes asignados.</td><td>Seguir la ejecución de la obra; documentar la bitácora; gestionar incidencias, permisos y pagos.</td></tr>
+          <tr><td>Usuarios de la plataforma</td><td>Registros de acceso, fecha y hora, dirección IP, tipo de dispositivo, eventos de doble verificación.</td><td>Proteger las cuentas; detectar accesos indebidos; mantener la auditoría de cambios.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="autorizacion">
+      <h2><span class="n">6</span>Autorización del titular</h2>
+      <p>SRA pide la autorización del titular a más tardar al momento de recoger sus datos. La autorización puede darse por escrito, por medios electrónicos (por ejemplo, al aceptar en la plataforma) o con conductas inequívocas, y SRA conserva prueba de ella para consultas posteriores.</p>
+      <p>Al pedirla, SRA informa: el tratamiento y su finalidad; que responder preguntas sobre datos sensibles o de menores es opcional; los derechos del titular; y la identidad, dirección y teléfono de SRA.</p>
+      <h3>Cuándo no se requiere autorización</h3>
+      <ul>
+        <li>Información pedida por una entidad pública o administrativa en ejercicio de sus funciones legales, o por orden judicial.</li>
+        <li>Datos de naturaleza pública.</li>
+        <li>Casos de urgencia médica o sanitaria.</li>
+        <li>Tratamiento autorizado por la ley con fines históricos, estadísticos o científicos.</li>
+        <li>Datos relacionados con el registro civil de las personas.</li>
+      </ul>
+      <p class="law">Ley 1581 de 2012, artículos 9, 10 y 12.</p>
+    </section>
+
+    <section id="sensibles">
+      <h2><span class="n">7</span>Datos sensibles y de menores</h2>
+      <p>Son datos sensibles los que afectan la intimidad del titular o cuyo uso indebido puede generar discriminación: los que revelan origen racial o étnico, orientación política, convicciones religiosas o filosóficas, pertenencia a sindicatos u organizaciones sociales o de derechos humanos, y los datos de salud, de vida sexual y biométricos.</p>
+      <p>SRA no solicita datos sensibles a través de sus plataformas. Si en algún caso fueran necesarios, SRA pedirá autorización explícita, informará cuáles son sensibles y para qué se usan, y la respuesta será siempre opcional. Ninguna actividad dependerá de que el titular los entregue.</p>
+      <p>Las fotografías de obra documentan el avance de la construcción. Pueden aparecer personas, pero las fotos no se usan para identificarlas ni para evaluarlas.</p>
+      <p>SRA no recoge datos de niñas, niños ni adolescentes. Si llegara a hacerlo, respetará su interés superior y sus derechos fundamentales, con autorización de su representante legal.</p>
+      <p class="law">Ley 1581 de 2012, artículos 5, 6 y 7.</p>
+    </section>
+
+    <section id="tratamiento">
+      <h2><span class="n">8</span>Encargados, almacenamiento y transferencias</h2>
+      <ul>
+        <li><b>Dónde se guardan:</b> en servidores de proveedores de servicios en la nube contratados por SRA, que pueden estar fuera de Colombia, y en el almacenamiento de red de la oficina (copias de respaldo).</li>
+        <li><b>Transmisión a encargados:</b> los proveedores que guardan datos por cuenta de SRA firman un contrato de transmisión que define el alcance del tratamiento y los obliga a seguir esta política, proteger las bases de datos y guardar confidencialidad. Con ese contrato, la transmisión no requiere informar al titular ni pedir su autorización.</li>
+        <li><b>Transferencias internacionales:</b> SRA solo transfiere datos a países con un nivel adecuado de protección según los estándares de la Superintendencia de Industria y Comercio, o en los casos que permite la ley, como con autorización expresa del titular o cuando es necesario para ejecutar un contrato con él.</li>
+        <li><b>Con quién se comparten:</b> SRA no vende ni cede datos personales. Los entrega a autoridades que los soliciten en ejercicio de sus funciones o a terceros cuando sea necesario para ejecutar el contrato con el titular.</li>
+        <li><b>Cuánto tiempo:</b> mientras dure la finalidad y después durante los plazos que exijan las normas laborales, contables y tributarias. Cumplido ese plazo, los datos se suprimen o se anonimizan.</li>
+      </ul>
+      <p class="law">Ley 1581 de 2012, artículo 26; Decreto 1074 de 2015, artículos 2.2.2.25.5.1 y 2.2.2.25.5.2.</p>
+    </section>
+
+    <section id="derechos">
+      <h2><span class="n">9</span>Sus derechos</h2>
+      <p>Como titular, usted puede:</p>
+      <ol>
+        <li>Conocer, actualizar y rectificar sus datos personales, incluidos los parciales, inexactos, incompletos o que induzcan a error.</li>
+        <li>Pedir prueba de la autorización que dio a SRA.</li>
+        <li>Ser informado, si lo solicita, del uso que se ha dado a sus datos.</li>
+        <li>Presentar quejas ante la Superintendencia de Industria y Comercio por infracciones a la ley, después de agotar la consulta o el reclamo ante SRA.</li>
+        <li>Revocar la autorización o pedir la supresión de sus datos cuando no se respeten los principios, derechos y garantías de la ley. La supresión no procede cuando usted tenga un deber legal o contractual de permanecer en la base de datos.</li>
+        <li>Acceder gratis a sus datos al menos una vez cada mes calendario, y cada vez que esta política cambie de forma sustancial.</li>
+      </ol>
+      <p>Pueden ejercer estos derechos el titular, sus causahabientes, su representante o apoderado, o quien actúe por estipulación a favor de otro. Los derechos de niñas, niños y adolescentes los ejercen sus representantes legales.</p>
+      <p class="law">Ley 1581 de 2012, artículo 8; Decreto 1074 de 2015, artículos 2.2.2.25.4.1 y 2.2.2.25.4.2.</p>
+    </section>
+
+    <section id="procedimiento">
+      <h2><span class="n">10</span>Consultas y reclamos</h2>
+      <p>Escriba al correo <span class="ph">datospersonales@por-completar</span> o radique su solicitud en el domicilio de SRA. Antes de responder, SRA verifica la identidad de quien solicita.</p>
+      <div class="cards">
+        <div class="card"><div class="big">10 <small>días hábiles</small></div><b>Consultas</b><p>Para conocer qué datos suyos tiene SRA. Se cuentan desde el recibo. Si no es posible responder a tiempo, SRA informa el motivo y la nueva fecha, que no supera 5 días hábiles más.</p></div>
+        <div class="card"><div class="big">15 <small>días hábiles</small></div><b>Reclamos</b><p>Para corregir, actualizar o suprimir datos, revocar la autorización o señalar un incumplimiento. Se cuentan desde el día siguiente al recibo y pueden extenderse hasta 8 días hábiles más, con aviso.</p></div>
+      </div>
+      <h3>Qué debe incluir un reclamo</h3>
+      <ul>
+        <li>La identificación del titular.</li>
+        <li>La descripción de los hechos que dan lugar al reclamo.</li>
+        <li>La dirección o el medio para responder.</li>
+        <li>Los documentos que quiera hacer valer.</li>
+      </ul>
+      <p>Si el reclamo está incompleto, SRA pide completarlo dentro de los 5 días siguientes a su recibo. Si pasan 2 meses sin que se complete, se entiende que el solicitante desistió. Cuando el reclamo está completo, SRA marca el dato con la leyenda «reclamo en trámite» en un máximo de 2 días hábiles, hasta que se resuelva.</p>
+      <p><b>Requisito previo para acudir a la SIC:</b> el titular puede presentar queja ante la Superintendencia de Industria y Comercio una vez haya agotado la consulta o el reclamo ante SRA.</p>
+      <p class="law">Ley 1581 de 2012, artículos 14, 15 y 16.</p>
+    </section>
+
+    <section id="deberes">
+      <h2><span class="n">11</span>Deberes de SRA como responsable</h2>
+      <ul>
+        <li>Garantizar al titular el pleno ejercicio del derecho de hábeas data.</li>
+        <li>Pedir y conservar copia de la autorización.</li>
+        <li>Informar al titular la finalidad del tratamiento y sus derechos.</li>
+        <li>Conservar la información con las medidas de seguridad necesarias.</li>
+        <li>Mantener la información veraz, completa, exacta y actualizada, y rectificarla cuando sea incorrecta.</li>
+        <li>Entregar al encargado solo los datos autorizados y exigirle condiciones de seguridad.</li>
+        <li>Tramitar consultas y reclamos en los términos de la ley.</li>
+        <li>Adoptar un manual interno de políticas y procedimientos.</li>
+        <li>Informar a la Superintendencia de Industria y Comercio cuando haya violaciones a los códigos de seguridad y riesgos en la administración de la información.</li>
+        <li>Cumplir las instrucciones de la Superintendencia de Industria y Comercio.</li>
+      </ul>
+      <p>SRA debe poder demostrar ante la Superintendencia que estas medidas existen y son proporcionales a su tamaño y a los datos que trata (responsabilidad demostrada).</p>
+      <p class="law">Ley 1581 de 2012, artículo 17; Decreto 1074 de 2015, artículos 2.2.2.25.6.1 y 2.2.2.25.6.2.</p>
+    </section>
+
+    <section id="seguridad">
+      <h2><span class="n">12</span>Seguridad e incidentes</h2>
+      <ul>
+        <li>Acceso con usuario, contraseña y doble verificación con código temporal.</li>
+        <li>Permisos por rol y por panel que se aplican en el servidor, no solo en la pantalla.</li>
+        <li>Contraseñas y códigos de respaldo guardados de forma cifrada; nunca se envían al navegador.</li>
+        <li>Conexiones cifradas (HTTPS) y archivos de obra en almacenamiento privado.</li>
+        <li>Copias de respaldo diarias y cifradas, con pruebas periódicas de restauración.</li>
+        <li>Registro de auditoría de cambios que no se puede alterar.</li>
+      </ul>
+      <p>Si ocurre un incidente que afecte datos personales, SRA lo contiene, evalúa su alcance, informa a los titulares afectados y lo reporta a la Superintendencia de Industria y Comercio en los términos que esta fije.</p>
+    </section>
+
+    <section id="rnbd">
+      <h2><span class="n">13</span>Registro Nacional de Bases de Datos</h2>
+      <p>Si SRA está obligada a hacerlo, inscribirá sus bases de datos en el Registro Nacional de Bases de Datos que administra la Superintendencia de Industria y Comercio y lo mantendrá actualizado. La obligación aplica a sociedades y entidades sin ánimo de lucro con activos totales superiores a 100.000 UVT. <span class="ph">Por confirmar con el contador</span></p>
+      <p class="law">Decreto 1074 de 2015, capítulo 26.</p>
+    </section>
+
+    <section id="cookies">
+      <h2><span class="n">14</span>Cookies</h2>
+      <p>SRA Project Management usa solo las cookies necesarias para mantener la sesión iniciada y proteger la cuenta. No usa cookies de publicidad ni de seguimiento de terceros.</p>
+    </section>
+
+    <section id="vigencia">
+      <h2><span class="n">15</span>Vigencia y cambios</h2>
+      <p>Esta política rige desde el <span class="ph">fecha de publicación</span>. Las bases de datos estarán vigentes mientras se cumplan las finalidades descritas y durante los plazos legales de conservación.</p>
+      <p>Si SRA cambia esta política de forma sustancial, lo informará a los titulares antes de aplicar el cambio, por la plataforma o por correo, y pedirá nueva autorización cuando cambie la finalidad.</p>
+      <p>La autoridad de protección de datos en Colombia es la <a href="https://www.sic.gov.co" target="_blank" rel="noopener">Superintendencia de Industria y Comercio</a>, a través de su Delegatura para la Protección de Datos Personales.</p>
+      <p class="law">Decreto 1074 de 2015, artículo 2.2.2.25.3.1.</p>
+    </section>
+
+    <section id="aviso">
+      <h2><span class="n">16</span>Aviso de privacidad y texto de autorización</h2>
+      <p>Textos para usar en la pantalla de ingreso de la plataforma y en los formularios donde se recojan datos.</p>
+      <h3>Aviso de privacidad</h3>
+      <div class="aviso">
+        <p id="aviso-txt">Santiago Rubiano Arquitectos, NIT [por completar], con domicilio en [dirección y ciudad por completar], teléfono [por completar], es responsable del tratamiento de sus datos personales. Los usamos para gestionar proyectos, tareas, jornadas y horas, y para proteger la plataforma. Usted tiene derecho a conocer, actualizar, rectificar y suprimir sus datos y a revocar su autorización, escribiendo a [correo por completar]. Las preguntas sobre datos sensibles son de respuesta opcional. Consulte la política completa de tratamiento de datos personales en [enlace por completar].</p>
+        <button class="btn" data-copy="aviso-txt" type="button">Copiar aviso</button>
+      </div>
+      <h3>Texto de autorización</h3>
+      <div class="aviso">
+        <p id="aut-txt">Autorizo de manera previa, expresa e informada a Santiago Rubiano Arquitectos para tratar mis datos personales con las finalidades descritas en su Política de Tratamiento de Datos Personales, que declaro conocer. Me informaron que puedo conocer, actualizar, rectificar y suprimir mis datos y revocar esta autorización escribiendo a [correo por completar], y que responder preguntas sobre datos sensibles es opcional.</p>
+        <button class="btn" data-copy="aut-txt" type="button">Copiar autorización</button>
+      </div>
+      <p class="law">Decreto 1074 de 2015, artículos 2.2.2.25.3.2 y 2.2.2.25.3.3; Ley 1581 de 2012, artículo 12.</p>
+    </section>
+  </main>
+</div>
+
+<footer>Santiago Rubiano Arquitectos · Política de tratamiento de datos personales · Versión 1.1, borrador pendiente de revisión jurídica.</footer>
+
+<script src="/privacidad.js" defer></script>

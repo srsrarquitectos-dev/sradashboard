@@ -1,0 +1,7 @@
+/* Pantallas de acceso: reusan el estilo de la mesa (.auth, .auth-card) */
+#sra-acceso[hidden] { display: none; }
+#sra-acceso .auth { min-height: 100vh; }
+#sra-acceso .auth-card details summary { cursor: pointer; }
+#sra-acceso .auth-card code { display: block; padding: 8px; border-radius: 6px; background: rgba(127, 127, 127, .12); margin-top: 6px; }
+#sra-acceso input[inputmode="numeric"] { letter-spacing: .3em; font-size: 20px; text-align: center; }
+body.sra-cargando { overflow: hidden; }
