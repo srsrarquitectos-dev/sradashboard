@@ -1,0 +1,26 @@
+# Cada propuesta de cambio (pull request) se publica en una dirección de vista previa para revisarla antes.
+name: Vista previa
+on:
+  pull_request:
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+jobs:
+  vista-previa:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: dashboard-sra
+          expires: 7d
