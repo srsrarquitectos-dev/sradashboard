@@ -28,7 +28,7 @@ async function arrancar() {
   try { sesion = await acceder(); }
   catch (e) {
     console.error(e);
-    document.getElementById('sra-acceso').innerHTML = `<div class="auth"><div class="auth-card"><h1>No se pudo conectar</h1><p>Revisa tu conexión a internet y recarga la página. Si el problema sigue, escribe a soporte.</p></div></div>`;
+    document.getElementById('sra-acceso').innerHTML = `<div class="auth"><div class="auth-card"><h1>No se pudo conectar</h1><p>Revisa tu conexión a internet y recarga la página. Si el problema sigue, escribe a soporte.</p><p class="sub">Detalle: ${String(e?.code || e?.message || e).replace(/[<>&]/g, '')}</p></div></div>`;
     return;
   }
   const { data: yo } = await sb.from('personas').select('rol').eq('id', sesion.personaId).single();

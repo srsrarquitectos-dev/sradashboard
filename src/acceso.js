@@ -199,7 +199,8 @@ export async function acceder() {
   if (!session) { await pantallaEntrar(msg); ({ data: { session } } = await sb.auth.getSession()); }
 
   const { data: requiere, error: eReq } = await sb.rpc('requiere_doble_verificacion');
-  modo.mfa = eReq ? true : requiere !== false;
+  if (eReq) throw eReq;   // sin respuesta de la base no se sigue (evita pedir pasos que no aplican)
+  modo.mfa = requiere !== false;
   modo.email = session.user.email;
   const { data: nivel } = await sb.auth.mfa.getAuthenticatorAssuranceLevel();
   if (modo.mfa && nivel?.currentLevel !== 'aal2') {
