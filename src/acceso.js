@@ -23,7 +23,7 @@ const MENSAJES = {
 const texto = e => MENSAJES[e?.code] || MENSAJES[e?.error_code] || (e?.status === 429 ? MENSAJES.over_request_rate_limit : null) ||
   (/fetch|network/i.test(e?.message || '') ? 'Sin conexión con el servidor. Revisa tu internet.' : 'No se pudo completar. Intenta de nuevo.');
 const codigoOk = c => /^\d{6}$/.test(c);
-export const problemaContrasena = p => (p || '').length < 10 ? 'La contraseña debe tener al menos 10 caracteres.'
+export const problemaContrasena = p => (p || '').length < 6 ? 'La contraseña debe tener al menos 6 caracteres.'
   : (!/[A-Za-zÁÉÍÓÚÑáéíóúñ]/.test(p) || !/\d/.test(p)) ? 'La contraseña debe combinar letras y números.' : '';
 
 // ---------- Pantallas ----------
@@ -81,7 +81,7 @@ function pantallaNuevaContrasena(invitacion) {
       <label class="f">Contraseña nueva<input type="password" id="nc-1" autocomplete="new-password"></label>
       <label class="f">Repite la contraseña<input type="password" id="nc-2" autocomplete="new-password"></label>
       <div class="err" role="alert"></div><button class="btn pri" type="submit">Guardar contraseña</button>
-      <p class="sub">Mínimo 10 caracteres, con letras y números.</p>`, invitacion ? 'Primer ingreso' : 'Seguridad'));
+      <p class="sub">Mínimo 6 caracteres, con letras y números.</p>`, invitacion ? 'Primer ingreso' : 'Seguridad'));
     f.onsubmit = async e => {
       e.preventDefault(); err('');
       const a = f.querySelector('#nc-1').value, b = f.querySelector('#nc-2').value;
