@@ -27,9 +27,9 @@ const cambios = [
    '<img src="${esc(sraBlob(id))}" alt="Foto de obra del ${fmtD(b.fecha)}" loading="lazy" data-fallback="1">'],
   // 4. Zona de administrador: se confirma con el código de la app autenticadora
   ['<p>Confirma tu contraseña para entrar. El panel queda abierto ${ADMIN_MIN} minutos.</p>',
-   '<p>Confirma con el código de 6 dígitos de tu app autenticadora. El panel queda abierto ${ADMIN_MIN} minutos.</p>'],
+   '<p>${window.SRA_REV?.mfa ? "Confirma con el código de 6 dígitos de tu app autenticadora." : "Confirma tu contraseña para entrar."} El panel queda abierto ${ADMIN_MIN} minutos.</p>'],
   ['<label class="f">Contraseña<input type="password" id="un-p" autocomplete="current-password"></label>',
-   '<label class="f">Código de 6 dígitos<input type="text" id="un-p" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}"></label>'],
+   '${window.SRA_REV?.mfa ? `<label class="f">Código de 6 dígitos<input type="text" id="un-p" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}"></label>` : `<label class="f">Contraseña<input type="password" id="un-p" autocomplete="current-password"></label>`}'],
   ['const u = normUser($("#un-u").value), cred = await getCred(u);\n      if (cred && cred.miembroId === S.me && await checkPass(cred, $("#un-p").value)) {',
    'if (await window.SRA_REVERIFICAR($("#un-p").value)) {'],
   // 5. Fotos: se indica dónde se guardan (perfil de la persona o carpeta privada del proyecto)
@@ -52,7 +52,7 @@ const cambios = [
   ["toast(isNew ? `Perfil de ${nombre} creado con usuario @${u}.` : wantsCred ? (d.usuario ? \"Contraseña restablecida.\" : `Acceso creado: @${u}.`) : \"Perfil guardado.\")",
    "toast(isNew ? `Perfil de ${nombre} creado. Ahora invítalo desde Supabase con ${email || \"su correo\"}.` : \"Perfil guardado.\")"],
   ["err.textContent = \"Contraseña incorrecta.\"; $(\"#un-p\").value = \"\";",
-   "err.textContent = \"Código incorrecto o vencido.\"; $(\"#un-p\").value = \"\";"],
+   "err.textContent = window.SRA_REV?.mfa ? \"Código incorrecto o vencido.\" : \"Contraseña incorrecta.\"; $(\"#un-p\").value = \"\";"],
 ];
 for (const [a, b] of cambios) {
   const n = js.split(a).length - 1;

@@ -2,7 +2,7 @@
 import './generado/mesa.css';
 import './acceso.css';
 import { sb } from './supabase.js';
-import { acceder, salir, reverificar } from './acceso.js';
+import { acceder, salir, reverificar, modo } from './acceso.js';
 import { db, setYo, sraBlob, iniciarTiempoReal } from './datos.js';
 
 function descargar({ filename, data, mime }) {
@@ -36,6 +36,7 @@ async function arrancar() {
   window.SRA_SESION = sesion;
   window.SRA_SALIR = msg => salir(msg);
   window.SRA_REVERIFICAR = reverificar;
+  window.SRA_REV = modo;
   window.sraBlob = sraBlob;
   // La mesa v1 pide sus servicios con window.claude.use(...); aquí se entregan los de Supabase
   window.claude = {

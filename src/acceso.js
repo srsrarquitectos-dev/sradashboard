@@ -30,7 +30,7 @@ export const problemaContrasena = p => (p || '').length < 10 ? 'La contraseña d
 function pantallaEntrar(aviso = '') {
   return new Promise(resolve => {
     let fallos = 0, esperaHasta = 0;
-    const f = mostrar(tarjeta(`<h1>Iniciar sesión</h1><p>Entra con tu correo y tu contraseña. Después te pediremos el código de tu app autenticadora.</p>
+    const f = mostrar(tarjeta(`<h1>Iniciar sesión</h1><p>Entra con tu correo y tu contraseña.</p>
       ${aviso ? `<div class="notice" style="margin:0 0 12px">${esc(aviso)}</div>` : ''}
       <label class="f">Correo<input type="email" id="ac-c" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
       <label class="f">Contraseña<input type="password" id="ac-p" autocomplete="current-password" required></label>
@@ -175,8 +175,17 @@ export async function salir(msg) {
   location.replace(location.pathname);
 }
 
-export async function reverificar(code) {
-  code = String(code || '').replace(/\s/g, ''); if (!codigoOk(code)) return false;
+// Doble verificación: interruptor en la base (config seguridad.doble_verificacion)
+export const modo = { mfa: true, email: '' };
+
+// Zona de administrador: con doble verificación pide el código; sin ella, la contraseña
+export async function reverificar(valor) {
+  if (!modo.mfa) {
+    if (!valor) return false;
+    const { error } = await sb.auth.signInWithPassword({ email: modo.email, password: String(valor) });
+    return !error;
+  }
+  const code = String(valor || '').replace(/\s/g, ''); if (!codigoOk(code)) return false;
   const { data } = await sb.auth.mfa.listFactors();
   const f = (data?.totp || []).find(x => x.status === 'verified'); if (!f) return false;
   const { error } = await sb.auth.mfa.challengeAndVerify({ factorId: f.id, code });
@@ -189,8 +198,11 @@ export async function acceder() {
   if (session && (tipoEnlace === 'recovery' || tipoEnlace === 'invite')) await pantallaNuevaContrasena(tipoEnlace === 'invite');
   if (!session) { await pantallaEntrar(msg); ({ data: { session } } = await sb.auth.getSession()); }
 
+  const { data: requiere, error: eReq } = await sb.rpc('requiere_doble_verificacion');
+  modo.mfa = eReq ? true : requiere !== false;
+  modo.email = session.user.email;
   const { data: nivel } = await sb.auth.mfa.getAuthenticatorAssuranceLevel();
-  if (nivel?.currentLevel !== 'aal2') {
+  if (modo.mfa && nivel?.currentLevel !== 'aal2') {
     const { data: fs } = await sb.auth.mfa.listFactors();
     const ok = (fs?.totp || []).find(x => x.status === 'verified');
     if (ok) await pantallaCodigo(ok.id); else await pantallaActivarApp();
